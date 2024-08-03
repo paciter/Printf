@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rufaccia <rufaccia@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/03 15:22:16 by rufaccia          #+#    #+#             */
+/*   Updated: 2024/08/03 15:22:42 by rufaccia         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_format(va_list args, const char format)
@@ -10,7 +22,7 @@ int	ft_format(va_list args, const char format)
 	else if (format == 's')
 		len += ft_putstr(va_arg(args, char *));
 	else if (format == 'p')
-		len += ft_print_pointer(va_arg(args, unsigned long));
+		len += ft_printptrhex(va_arg(args, void *));
 	else if (format == 'd' || format == 'i')
 		len += ft_putnbr(va_arg(args, int));
 	else if (format == 'u')
